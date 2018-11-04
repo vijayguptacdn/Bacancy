@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BacancyTest</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     <%= stylesheet_link_tag    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css' %>
+     <%= stylesheet_link_tag    'https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class='hold-transition skin-blue sidebar-mini'>
+    <% if user_signed_in? %>
+    <div class="pull-right">
+      <%= link_to('Logout', destroy_user_session_path, :method => :delete, class: 'btn btn-danger') %>  
+    </div> 
+    <div class="clear"></div>       
+    <% end %>
+    <div>
+  	<%= render partial: 'layouts/flash' unless flash.empty? %>
+  </div>
+    <%= yield %>
+  </body>
+</html>

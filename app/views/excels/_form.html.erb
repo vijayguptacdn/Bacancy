@@ -1,0 +1,14 @@
+<div class="container">
+   <%= form_for excel do |f| %>
+    <div class="form-group">
+      <label for="email">Title:</label>
+      <%= f.text_field :title , :class=>"form-control"%>
+    </div>
+    <div class="form-group">
+      <label for="pwd">File:</label>
+      <%= f.file_field :image , :class=> "form-control", :required => true %>
+    </div>
+    <%= f.submit 'Upload', :class=>"btn btn-default btn-primary" %>
+  <% end %>
+
+</div>
